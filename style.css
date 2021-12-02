@@ -33,4 +33,7 @@ canvas {
     /* border: 0.5px solid black; */
     z-index: 99999;
     background-color: rgb(31, 31, 31);
+    position: fixed;
+    top: 0;
+    left: 0;
 }
