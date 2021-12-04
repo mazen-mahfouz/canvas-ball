@@ -29,6 +29,7 @@ let opacity = [];
 let color_pattern = ["#34495e", "#e74c3c", '#2ecc71', '#9b59b6', '#f1c40f', '#1abc9c'];
 let r = [];
 let size_event;
+let size_min = [];
 let pos;
 resize()
 function resize() {
@@ -47,7 +48,8 @@ function resize() {
 window.addEventListener('resize', resize, false);
 
 for (let i = 0; i < count; i++) {
-    size[i] = 3;
+    size_min[i] = (Math.random() * (5 - 1)) + 1;
+    size[i] = size_min[i];
     x[i] = Math.random() * (innerWidth - size[i] * 2) + size[i];
     y[i] = Math.random() * (innerHeight - size[i] * 2) + size[i];
     dx[i] = (Math.random() - 0.5) * 2;
@@ -103,7 +105,7 @@ function new_circle() {
                     opacity[i] = .8;
                 }
             } else {
-                if (size[i] >= 3) {
+                if (size[i] > size_min[i]) {
                     r[i] = r[i] - .001 - .001;
                     size[i] = r[i];
                     opacity[i] = .3;
