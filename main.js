@@ -48,7 +48,7 @@ function resize() {
 window.addEventListener('resize', resize, false);
 
 for (let i = 0; i < count; i++) {
-    size_min[i] = (Math.random() * (8 - 1)) + 1;
+    size_min[i] = (Math.random() * (10 - 1)) + 1;
     size[i] = size_min[i];
     x[i] = Math.random() * (innerWidth - size[i] * 2) + size[i];
     y[i] = Math.random() * (innerHeight - size[i] * 2) + size[i];
